@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102a43">
+<meta name="description" content="Portal Musyawarah Guru Mata Pelajaran Bahasa Indonesia Korwil Ngawi Selatan. Berbagi praktik baik, perangkat pembelajaran, literasi, dan pengembangan profesi guru.">
+<title>MGMP Bahasa Indonesia | Korwil Ngawi Selatan</title>
+<style>
+:root{
+  --navy:#102a43;--navy2:#183e5a;--teal:#12b8a6;--mint:#dffaf4;
+  --gold:#f4bd50;--ink:#172b3a;--muted:#637789;--paper:#f5f8fb;
+  --white:#fff;--line:#e2eaf0;--shadow:0 18px 45px rgba(16,42,67,.10);
+  --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.65}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit}
+.container{width:min(1160px,92%);margin:auto}
+.topline{height:5px;background:linear-gradient(90deg,var(--teal),var(--gold),#f58b70)}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(226,234,240,.9)}
+.navbar{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:-.03em;color:var(--navy);line-height:1.15}
+.logo{width:47px;height:47px;border-radius:15px;background:linear-gradient(135deg,var(--teal),#087e89);display:grid;place-items:center;color:white;font-size:20px;box-shadow:0 8px 20px #12b8a633}
+.brand small{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:750;margin-top:5px}
+.nav-links{display:flex;align-items:center;gap:20px;font-size:13px;font-weight:750;color:#476074}
+.nav-links a:hover{color:#079e92}
+.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:12px 18px;background:var(--teal);color:#063b3b;font-weight:850;cursor:pointer;transition:.2s}
+.nav-cta:hover,.btn:hover{transform:translateY(-2px);filter:brightness(.97)}
+.menu-toggle{display:none;border:1px solid var(--line);background:white;border-radius:12px;padding:9px 12px;color:var(--navy);font-size:20px}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 85% 20%,#1d6677 0,transparent 32%),linear-gradient(125deg,#0b2035,#143b55 62%,#087f80);color:white;padding:86px 0 74px}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #ffffff17;border-radius:50%;pointer-events:none}
+.hero:before{width:470px;height:470px;right:-100px;top:-180px}
+.hero:after{width:300px;height:300px;right:30px;top:-100px}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:55px;position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #ffffff36;background:#ffffff10;padding:7px 12px;border-radius:999px;font-size:11px;font-weight:850;letter-spacing:.13em;text-transform:uppercase;color:#bdf8ee}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px #f4bd5026}
+h1{font-size:clamp(2.4rem,5.2vw,4.8rem);letter-spacing:-.065em;line-height:1.02;margin:23px 0}
+h1 span{color:#71ead8}
+.hero p{max-width:610px;color:#d1e1e9;font-size:17px;margin:0 0 28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-light{background:white;color:var(--navy)}
+.btn-outline{border:1px solid #ffffff60;background:transparent;color:white}
+.hero-note{font-size:12px;color:#b9ced9;margin-top:18px}
+.hero-card{padding:25px;border-radius:28px;background:linear-gradient(145deg,#ffffff20,#ffffff09);border:1px solid #ffffff30;backdrop-filter:blur(8px);box-shadow:0 24px 60px #06182745;transform:rotate(1.5deg)}
+.hero-card-top{display:flex;justify-content:space-between;align-items:center;color:#d2e9ef;font-size:12px;font-weight:800}
+.hero-symbol{font-size:45px;margin:25px 0 8px}
+.hero-card h3{font-size:25px;letter-spacing:-.04em;margin:0 0 8px}
+.hero-card p{font-size:13px;margin:0;color:#d0e5eb}
+.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:25px}
+.mini-stat{padding:13px 10px;border-radius:15px;background:#ffffff12}
+.mini-stat b{display:block;font-size:20px;color:#8df0df}
+.mini-stat span{font-size:10px;color:#d2e4eb}
+.section{padding:76px 0}
+.section-white{background:white}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}
+.kicker{color:#079e92;font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+h2{font-size:clamp(1.8rem,3vw,2.65rem);letter-spacing:-.05em;line-height:1.1;margin:8px 0 10px;color:var(--navy)}
+.section-head p,.intro{color:var(--muted);max-width:650px;margin:0}
+.text-link{font-size:13px;font-weight:850;color:#078d84;white-space:nowrap}
+.grid{display:grid;gap:18px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 8px 24px #102a4306;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card-icon{width:47px;height:47px;border-radius:15px;background:var(--mint);display:grid;place-items:center;font-size:22px;margin-bottom:18px}
+.card h3{margin:0 0 8px;font-size:18px;letter-spacing:-.025em;color:var(--navy)}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:14px 0;font-size:11px;color:var(--muted);font-weight:750}
+.tag{background:#e8f8f5;color:#087f76;border-radius:999px;padding:5px 9px;font-size:10px;font-weight:900}
+.notice{display:flex;gap:16px;align-items:flex-start;border-radius:18px;padding:20px;background:#fff7e5;border:1px solid #f8e6b6;margin-bottom:14px}
+.notice-icon{font-size:24px}
+.notice h3{font-size:16px;margin:0 0 5px;color:#684a0c}
+.notice p{margin:0;font-size:13px;color:#806b3e}
+.notice .meta{margin-bottom:0}
+.agenda-date{min-width:62px;text-align:center;border-radius:16px;background:var(--navy);color:white;padding:10px 8px}
+.agenda-date b{display:block;font-size:23px;line-height:1.1}
+.agenda-date span{font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+.agenda-item{display:flex;gap:15px;align-items:center;padding:17px 0;border-bottom:1px solid var(--line)}
+.agenda-item:last-child{border-bottom:0}
+.agenda-item h3{margin:0 0 4px;font-size:15px;color:var(--navy)}
+.agenda-item p{margin:0;color:var(--muted);font-size:12px}
+.profile-band{background:linear-gradient(120deg,#e9fbf7,#f1f7fc);border:1px solid #d5f0e9;border-radius:28px;padding:32px;display:grid;grid-template-columns:.8fr 1.2fr;gap:35px;align-items:center}
+.profile-band h3{font-size:26px;line-height:1.2;letter-spacing:-.04em;color:var(--navy);margin:10px 0}
+.profile-band p{font-size:14px;color:var(--muted)}
+.value-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.value{padding:16px;border-radius:16px;background:#ffffffc9;border:1px solid #d9eee9}
+.value b{display:block;color:var(--navy);font-size:14px}
+.value span{font-size:12px;color:var(--muted)}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.pill{border:1px solid var(--line);background:white;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:750;color:#526b7e}
+.resource-tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.search{flex:1;min-width:220px;padding:13px 16px;border:1px solid var(--line);border-radius:14px;background:white;outline:none}
+.search:focus,textarea:focus,input:focus{border-color:var(--teal);box-shadow:0 0 0 3px #12b8a61c}
+.filter{padding:12px 15px;border:1px solid var(--line);border-radius:14px;background:white;color:var(--navy);font-weight:750}
+.resource-card{display:flex;gap:16px;align-items:flex-start}
+.resource-card .card-icon{flex-shrink:0;margin:0}
+.resource-card h3{font-size:16px}
+.resource-card a{display:inline-block;margin-top:12px;font-size:12px;font-weight:900;color:#078d84}
+.resource-card a:hover{text-decoration:underline}
+.resource-card .small-note{font-size:11px;color:#8a9aa7;margin-top:7px}
+.literacy-card{min-height:225px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#fff,#f0fbf8)}
+.quote{font-size:25px;line-height:1.3;font-weight:850;letter-spacing:-.04em;color:var(--navy)}
+.quote span{color:#0aa896}
+.gallery-tile{min-height:175px;border-radius:22px;padding:23px;color:white;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(140deg,#163c56,#0b8c86);position:relative;overflow:hidden}
+.gallery-tile:nth-child(2){background:linear-gradient(140deg,#5d4b80,#b77f9c)}
+.gallery-tile:nth-child(3){background:linear-gradient(140deg,#a55f2a,#e8b75d);color:#2e291c}
+.gallery-tile:nth-child(4){background:linear-gradient(140deg,#254d43,#7db99a)}
+.gallery-tile:after{content:"";position:absolute;width:150px;height:150px;border:1px solid #ffffff38;border-radius:50%;right:-40px;top:-40px}
+.gallery-tile .emoji{font-size:32px}
+.gallery-tile h3{margin:0;font-size:19px}
+.gallery-tile p{margin:4px 0 0;font-size:12px;opacity:.8}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:25px}
+.contact-info{background:var(--navy);color:white;border-radius:24px;padding:28px}
+.contact-info h3{font-size:23px;letter-spacing:-.04em;margin:0 0 10px}
+.contact-info p{font-size:13px;color:#c4d6e1}
+.contact-line{padding:13px 0;border-bottom:1px solid #ffffff20;font-size:13px}
+.contact-line:last-child{border-bottom:0}
+.contact-line b{display:block;color:#7ce9d9;font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}
+.form-card{background:white;border:1px solid var(--line);border-radius:24px;padding:28px}
+.form-card label{display:block;font-size:12px;font-weight:850;color:var(--navy);margin:0 0 6px}
+.form-card input,.form-card textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 13px;margin-bottom:15px;outline:none;background:#fbfdff}
+.form-card textarea{min-height:110px;resize:vertical}
+.form-note{font-size:11px;color:var(--muted);margin-top:12px}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links a{border:1px solid var(--line);border-radius:13px;padding:12px 15px;background:white;font-size:12px;font-weight:800;color:var(--navy)}
+.links a:hover{border-color:var(--teal);color:#078d84}
+footer{background:#081b2b;color:#d5e1e8;padding:32px 0}
+.footer-inner{display:flex;justify-content:space-between;gap:25px;align-items:center}
+footer p{margin:5px 0;font-size:12px;color:#9eb2c0}
+footer .brand{color:white}
+footer .brand small{color:#9eb2c0}
+.backtop{position:fixed;bottom:20px;right:20px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--navy);font-weight:900;box-shadow:var(--shadow);z-index:10}
+.empty{display:none;padding:20px;text-align:center;color:var(--muted);background:white;border:1px dashed var(--line);border-radius:16px}
+@media(max-width:900px){
+ .nav-links{gap:12px}.nav-links a{font-size:11px}.nav-cta{display:none}
+ .hero-grid{grid-template-columns:1fr .75fr;gap:25px}
+ .grid-3{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:700px){
+ .navbar{min-height:70px}.menu-toggle{display:block}
+ .nav-links{display:none;position:absolute;left:4%;right:4%;top:70px;background:white;padding:16px;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}
+ .nav-links.open{display:flex}.nav-links a{padding:11px 8px;font-size:13px;border-bottom:1px solid #f0f3f6}.nav-links a:last-child{border-bottom:0}
+ .hero{padding:60px 0 48px}.hero-grid{grid-template-columns:1fr}.hero-card{transform:none;max-width:460px}
+ .hero p{font-size:15px}.section{padding:55px 0}.section-head{align-items:flex-start;flex-direction:column;gap:10px}
+ .grid-3,.grid-2,.profile-band,.contact-grid{grid-template-columns:1fr}
+ .profile-band{padding:24px}.value-list{grid-template-columns:1fr 1fr}
+ .footer-inner{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:430px){.grid-3{grid-template-columns:1fr}.value-list{grid-template-columns:1fr}.hero-actions .btn{width:100%}.brand{font-size:13px}.brand small{font-size:9px}}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header>
+  <div class="container navbar">
+    <a class="brand" href="#beranda" aria-label="MGMP Bahasa Indonesia Beranda">
+      <span class="logo">BI<span style="color:#f4bd50">.</span></span>
+      <span>MGMP BAHASA INDONESIA<small>KORWIL NGAWI SELATAN</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks" aria-label="Navigasi utama">
+      <a href="#beranda">Beranda</a><a href="#profil">Profil</a><a href="#perangkat">Perangkat Ajar</a>
+      <a href="#literasi">Literasi</a><a href="#pkb">PKB</a><a href="#galeri">Galeri</a><a href="#kontak">Kontak</a>
+    </nav>
+    <a class="nav-cta" href="#perangkat">Jelajahi Sumber ↗</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="beranda">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow"><span class="pulse"></span> Ruang tumbuh guru Bahasa Indonesia</div>
+   <h1>Berbagi Ilmu.<br><span>Bertumbuh Bersama.</span></h1>
+   <p>Selamat datang di ruang kolaborasi MGMP Bahasa Indonesia Korwil Ngawi Selatan—tempat guru saling menguatkan, berbagi praktik baik, dan menumbuhkan budaya literasi.</p>
+   <div class="hero-actions"><a class="btn" href="#profil">Kenali Organisasi <span>↗</span></a><a class="btn btn-outline" href="#perangkat">Akses Perangkat Ajar ↓</a></div>
+   <div class="hero-note">Kolaborasi • Inovasi • Literasi • Profesionalisme</div>
+  </div>
+  <div class="hero-card">
+   <div class="hero-card-top"><span>MGMP DIGITAL HUB</span><span>● AKTIF BERKOLABORASI</span></div>
+   <div class="hero-symbol">📚✍️</div>
+   <h3>Bahasa menyatukan,<br>literasi menggerakkan.</h3>
+   <p>Berjejaring untuk pembelajaran Bahasa Indonesia yang bermakna, kreatif, dan relevan.</p>
+   <div class="mini-stats">
+    <div class="mini-stat"><b>01</b><span>Kolaborasi</span></div>
+    <div class="mini-stat"><b>02</b><span>Inovasi</span></div>
+    <div class="mini-stat"><b>03</b><span>Literasi</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section section-white" id="pengumuman">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">Info terkini</div><h2>Pengumuman & agenda</h2><p>Informasi kegiatan, pertemuan, pelatihan, dan program literasi MGMP.</p></div><a class="text-link" href="#kontak">Kirim informasi →</a></div>
+  <div class="grid grid-2">
+   <div>
+    <div class="notice"><div class="notice-icon">📣</div><div><h3>Ruang Pengumuman MGMP</h3><p>Tambahkan informasi rapat, seminar, bimtek, atau kegiatan terbaru di bagian ini. Sertakan tanggal, lokasi, dan tautan pendaftaran bila tersedia.</p><div class="meta"><span class="tag">PENGUMUMAN</span><span>Perbarui oleh pengurus</span></div></div></div>
+    <div class="notice" style="background:#e9f8f6;border-color:#cceee8"><div class="notice-icon">📝</div><div><h3>Berbagi Praktik Baik</h3><p>Anggota dapat mengirimkan artikel, perangkat ajar, atau pengalaman pembelajaran untuk dipublikasikan di portal MGMP.</p><div class="meta"><span class="tag">KOLABORASI</span><span>Terbuka untuk anggota</span></div></div></div>
+   </div>
+   <div class="card">
+    <div class="kicker">Agenda kerja</div><h3 style="margin-top:8px">Kalender kegiatan</h3>
+    <div class="agenda-item"><div class="agenda-date"><b>01</b><span>Agenda</span></div><div><h3>Pertemuan rutin MGMP</h3><p>Jadwal, tempat, dan pokok bahasan ditetapkan oleh pengurus.</p></div></div>
+    <div class="agenda-item"><div class="agenda-date"><b>02</b><span>Agenda</span></div><div><h3>Lokakarya perangkat pembelajaran</h3><p>Kolaborasi penyusunan CP, ATP, modul ajar, dan asesmen.</p></div></div>
+    <div class="agenda-item"><div class="agenda-date"><b>03</b><span>Agenda</span></div><div><h3>Bulan Bahasa & kegiatan literasi</h3><p>Publikasi karya, apresiasi sastra, dan kegiatan siswa.</p></div></div>
+    <div class="agenda-item"><div class="agenda-date"><b>04</b><span>Agenda</span></div><div><h3>Refleksi dan evaluasi program</h3><p>Evaluasi pelaksanaan program semester/tahun ajaran.</p></div></div>
+    <p class="form-note">Catatan: agenda di atas merupakan contoh kerangka. Lengkapi tanggal dan lokasi sesuai keputusan pengurus.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="profil">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">Tentang kami</div><h2>Belajar bersama, berdampak nyata.</h2><p>MGMP menjadi ruang profesional untuk bertukar gagasan, memperkuat kompetensi, dan meningkatkan mutu pembelajaran Bahasa Indonesia.</p></div></div>
+  <div class="profile-band">
+   <div><div class="kicker">Sambutan ketua</div><h3>Salam literasi dan kolaborasi!</h3><p>Selamat datang di portal MGMP Bahasa Indonesia Korwil Ngawi Selatan. Semoga ruang digital ini menjadi jembatan berbagi ilmu, karya, dan praktik baik. Mari terus belajar, berinovasi, serta menghadirkan pembelajaran Bahasa Indonesia yang menyenangkan dan bermakna bagi peserta didik.</p><p><b>— Ketua MGMP Bahasa Indonesia Korwil Ngawi Selatan</b><br><span style="font-size:11px">Nama ketua dapat ditambahkan di sini.</span></p></div>
+   <div>
+    <div class="value-list">
+     <div class="value"><b>🎯 Visi</b><span>Terwujudnya guru Bahasa Indonesia yang profesional, kolaboratif, inovatif, dan berorientasi pada peningkatan literasi peserta didik.</span></div>
+     <div class="value"><b>🤝 Misi</b><span>Menguatkan komunitas belajar, berbagi praktik baik, dan meningkatkan kompetensi pedagogik serta profesional.</span></div>
+     <div class="value"><b>🧠 Pengembangan</b><span>Mendorong inovasi pembelajaran, asesmen yang bermakna, dan pemanfaatan teknologi secara bijak.</span></div>
+     <div class="value"><b>📖 Budaya literasi</b><span>Mengembangkan apresiasi bahasa dan sastra serta memberi ruang bagi karya guru dan siswa.</span></div>
+    </div>
+    <div class="pill-row"><span class="pill">Struktur Pengurus</span><span class="pill">AD/ART</span><span class="pill">Data Anggota</span><span class="pill">Dasar Hukum</span></div>
+   </div>
+  </div>
+  <div class="grid grid-3" style="margin-top:20px">
+   <article class="card"><div class="card-icon">🧑‍💼</div><h3>Struktur Kepengurusan</h3><p>Ketua, sekretaris, bendahara, serta bidang kurikulum, literasi, publikasi, dan pengembangan profesi.</p><a class="text-link" href="#kontak">Tambahkan data pengurus →</a></article>
+   <article class="card"><div class="card-icon">📑</div><h3>Dasar Hukum & AD/ART</h3><p>Tempat penyimpanan dokumen organisasi, surat keputusan, AD/ART, dan program kerja yang telah disahkan.</p><a class="text-link" href="#perangkat">Kelola dokumen →</a></article>
+   <article class="card"><div class="card-icon">👥</div><h3>Direktori Anggota</h3><p>Daftar guru anggota MGMP beserta asal sekolah, wilayah tugas, dan kontak organisasi yang disepakati.</p><a class="text-link" href="#kontak">Perbarui direktori →</a></article>
+  </div>
+ </div>
+</section>
+
+<section class="section section-white" id="perangkat">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">Pusat sumber belajar</div><h2>Perangkat ajar & kurikulum</h2><p>Kumpulan dokumen dan media pembelajaran untuk mendukung perencanaan, pelaksanaan, serta evaluasi pembelajaran.</p></div></div>
+  <div class="resource-tools"><input class="search" id="resourceSearch" type="search" placeholder="Cari CP, ATP, modul ajar, bank soal…" aria-label="Cari sumber belajar"><select class="filter" id="resourceFilter" aria-label="Filter kategori"><option value="all">Semua kategori</option><option value="kurikulum">Kurikulum</option><option value="asesmen">Bank soal & asesmen</option><option value="media">Bahan ajar & media</option><option value="organisasi">Dokumen organisasi</option></select></div>
+  <div class="grid grid-2" id="resourceGrid">
+   <article class="card resource-card" data-category="kurikulum" data-search="capaian pembelajaran cp bahasa indonesia"><div class="card-icon">🧭</div><div><h3>Capaian Pembelajaran (CP)</h3><p>Dokumen CP Bahasa Indonesia sesuai fase dan ketentuan kurikulum yang berlaku.</p><a href="https://kurikulum.kemdikbud.go.id/" target="_blank" rel="noopener">Buka referensi kurikulum ↗</a><div class="small-note">Tambahkan tautan dokumen CP yang digunakan MGMP.</div></div></article>
+   <article class="card resource-card" data-category="kurikulum" data-search="alur tujuan pembelajaran atp modul ajar rpp"><div class="card-icon">🗂️</div><div><h3>ATP & Modul Ajar / RPP</h3><p>Ruang berbagi alur tujuan pembelajaran, modul ajar, dan rancangan pembelajaran.</p><a href="#kontak">Tambahkan tautan dokumen →</a><div class="small-note">Gunakan tautan Drive organisasi dengan akses yang sesuai.</div></div></article>
+   <article class="card resource-card" data-category="asesmen" data-search="bank soal kisi kisi sumatif formatif ujian sekolah"><div class="card-icon">📝</div><div><h3>Bank Soal & Kisi-Kisi</h3><p>Kisi-kisi, instrumen formatif dan sumatif, rubrik, serta bahan latihan bersama.</p><a href="#kontak">Tambahkan bank soal →</a><div class="small-note">Pastikan hak akses, kualitas soal, dan kerahasiaan asesmen terjaga.</div></div></article>
+   <article class="card resource-card" data-category="media" data-search="bahan ajar slide presentasi ebook video teks puisi cerpen prosedur"><div class="card-icon">🎬</div><div><h3>Bahan Ajar & Media</h3><p>Presentasi, e-book, video, contoh teks, dan media interaktif hasil karya guru.</p><a href="#kontak">Kirim karya →</a><div class="small-note">Cantumkan nama pembuat dan sumber materi.</div></div></article>
+   <article class="card resource-card" data-category="organisasi" data-search="ad art sk pengurus program kerja dasar hukum"><div class="card-icon">🏛️</div><div><h3>Dokumen Organisasi</h3><p>AD/ART, SK pengurus, program kerja, notula, dan laporan kegiatan MGMP.</p><a href="#kontak">Tambahkan dokumen →</a><div class="small-note">Publikasikan dokumen yang telah disetujui untuk dibagikan.</div></div></article>
+   <article class="card resource-card" data-category="asesmen" data-search="rubrik asesmen diagnostik penilaian literasi"><div class="card-icon">📊</div><div><h3>Instrumen & Rubrik Asesmen</h3><p>Contoh asesmen diagnostik, rubrik menulis dan berbicara, serta refleksi belajar.</p><a href="#kontak">Tambahkan instrumen →</a><div class="small-note">Sesuaikan dengan kebutuhan peserta didik dan tujuan pembelajaran.</div></div></article>
+  </div>
+  <div class="empty" id="emptyState">Belum ada sumber yang cocok. Coba kata kunci atau kategori lain.</div>
+ </div>
+</section>
+
+<section class="section" id="literasi">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">Panggung karya</div><h2>Pojok literasi & sastra</h2><p>Tempat gagasan tumbuh menjadi tulisan, dan tulisan menjadi inspirasi pembelajaran.</p></div></div>
+  <div class="grid grid-3">
+   <article class="card literacy-card"><div><div class="card-icon">✍️</div><h3>Karya Tulis Guru</h3><p>Artikel populer, opini pendidikan, refleksi pembelajaran, dan praktik baik dari ruang kelas.</p></div><a class="text-link" href="#kontak">Kirim tulisan →</a></article>
+   <article class="card literacy-card"><div><div class="card-icon">🌻</div><h3>Karya Sastra Siswa</h3><p>Galeri puisi, cerpen, esai, cerita inspiratif, dan karya literasi peserta didik.</p></div><a class="text-link" href="#kontak">Ajukan karya siswa →</a></article>
+   <article class="card literacy-card"><div><div class="card-icon">🏆</div><h3>Info Lomba</h3><p>Informasi lomba menulis, baca puisi, FLS2N, festival literasi, dan kompetisi kebahasaan.</p></div><a class="text-link" href="#pengumuman">Lihat pengumuman →</a></article>
+  </div>
+  <div class="profile-band" style="margin-top:20px;grid-template-columns:1fr 1fr">
+   <div><div class="kicker">Slogan literasi</div><div class="quote">“Membaca membuka cakrawala, <span>menulis meninggalkan jejak.</span>”</div></div>
+   <div><h3 style="margin-top:0">Ingin karya Anda tampil?</h3><p>Kirimkan naskah beserta nama penulis, asal sekolah, sinopsis singkat, dan pernyataan bahwa karya layak dipublikasikan. Pengurus dapat menambahkan panduan kurasi di bagian ini.</p><a class="btn" href="#kontak">Hubungi pengelola ↗</a></div>
+  </div>
+ </div>
+</section>
+
+<section class="section section-white" id="pkb">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">Terus bertumbuh</div><h2>Pengembangan Keprofesian Berkelanjutan</h2><p>Belajar sepanjang hayat melalui pelatihan, komunitas belajar, penelitian, dan publikasi karya ilmiah.</p></div></div>
+  <div class="grid grid-3">
+   <article class="card"><div class="card-icon">🎓</div><h3>Diklat, Seminar & Webinar</h3><p>Informasi pelatihan, lokakarya, komunitas belajar, UKBI, dan penguatan kompetensi guru.</p><div class="meta"><span class="tag">PKB</span><span>Agenda dan sertifikat</span></div></article>
+   <article class="card"><div class="card-icon">🔬</div><h3>PTK & Karya Ilmiah</h3><p>Panduan merumuskan masalah, menyusun proposal, mengolah data, dan menulis laporan penelitian.</p><div class="meta"><span class="tag">PUBLIKASI</span><span>Berbagi praktik baik</span></div></article>
+   <article class="card"><div class="card-icon">💡</div><h3>Inovasi Pembelajaran</h3><p>Diskusi strategi pembelajaran mendalam, literasi digital, diferensiasi, dan asesmen bermakna.</p><div class="meta"><span class="tag">INOVASI</span><span>Kolaborasi sejawat</span></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="galeri">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">Cerita kebersamaan</div><h2>Dokumentasi & galeri</h2><p>Arsip kegiatan MGMP, lokakarya, kunjungan edukatif, Bulan Bahasa, dan karya publikasi.</p></div></div>
+  <div class="grid grid-2">
+   <div class="gallery-tile"><div class="emoji">🤝</div><div><h3>Lokakarya & Pertemuan</h3><p>Tambahkan foto kegiatan, tanggal, lokasi, dan ringkasan hasil.</p></div></div>
+   <div class="gallery-tile"><div class="emoji">📸</div><div><h3>Praktik Baik Pembelajaran</h3><p>Dokumentasi strategi inovatif dari sekolah anggota.</p></div></div>
+   <div class="gallery-tile"><div class="emoji">🎤</div><div><h3>Bulan Bahasa & Sastra</h3><p>Apresiasi bahasa, sastra, dan kreativitas peserta didik.</p></div></div>
+   <div class="gallery-tile"><div class="emoji">📰</div><div><h3>Buletin / Jurnal Digital</h3><p>Arsip terbitan, artikel, dan karya pilihan MGMP.</p></div></div>
+  </div>
+  <p class="form-note">Galeri ini berupa tempat awal. Ganti setiap panel dengan foto kegiatan MGMP yang telah memperoleh izin publikasi.</p>
+ </div>
+</section>
+
+<section class="section section-white" id="kontak">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">Mari terhubung</div><h2>Layanan & kontak</h2><p>Punya pertanyaan, ide kegiatan, atau karya untuk dibagikan? Silakan hubungi pengelola portal.</p></div></div>
+  <div class="contact-grid">
+   <div class="contact-info"><h3>MGMP Bahasa Indonesia<br>Korwil Ngawi Selatan</h3><p>Ruang komunikasi dan kolaborasi guru Bahasa Indonesia di wilayah Ngawi Selatan.</p>
+    <div class="contact-line"><b>Narahubung</b>[Nama pengurus / contact person]</div>
+    <div class="contact-line"><b>WhatsApp</b>[Nomor WhatsApp resmi MGMP]</div>
+    <div class="contact-line"><b>Email</b>[Alamat email organisasi]</div>
+    <div class="contact-line"><b>Sekretariat</b>[Alamat sekretariat / sekolah tempat sekretariat]</div>
+    <p style="font-size:11px;margin-top:18px">Ganti semua informasi dalam tanda kurung siku sebelum situs dipublikasikan.</p>
+   </div>
+   <form class="form-card" id="feedbackForm">
+    <h3 style="margin:0 0 5px;color:var(--navy)">Buku tamu & saran</h3><p style="font-size:13px;color:var(--muted);margin:0 0 20px">Formulir ini akan menyiapkan pesan melalui aplikasi email perangkat Anda.</p>
+    <label for="visitorName">Nama</label><input id="visitorName" name="name" required placeholder="Nama lengkap">
+    <label for="visitorRole">Asal sekolah / instansi</label><input id="visitorRole" name="role" placeholder="Nama sekolah atau instansi">
+    <label for="visitorEmail">Email (opsional)</label><input id="visitorEmail" name="email" type="email" placeholder="nama@email.com">
+    <label for="visitorMessage">Pesan, kritik, atau saran</label><textarea id="visitorMessage" name="message" required placeholder="Tuliskan pesan Anda di sini…"></textarea>
+    <button class="btn" type="submit">Siapkan pesan ↗</button>
+    <div class="form-note" id="formStatus" aria-live="polite">Catatan: atur alamat email tujuan pada kode JavaScript sebelum digunakan.</div>
+   </form>
+  </div>
+  <div style="margin-top:38px"><div class="kicker" style="margin-bottom:13px">Tautan penting</div><div class="links">
+   <a href="https://kurikulum.kemdikbud.go.id/" target="_blank" rel="noopener">Kurikulum Nasional ↗</a>
+   <a href="https://guru.kemendikdasmen.go.id/" target="_blank" rel="noopener">Portal Guru ↗</a>
+   <a href="https://badanbahasa.kemendikdasmen.go.id/" target="_blank" rel="noopener">Badan Bahasa ↗</a>
+   <a href="https://ukbi.kemendikdasmen.go.id/" target="_blank" rel="noopener">UKBI ↗</a>
+   <a href="https://kemendikdasmen.go.id/" target="_blank" rel="noopener">Kemendikdasmen ↗</a>
+  </div></div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer-inner">
+  <a class="brand" href="#beranda"><span class="logo">BI<span style="color:#f4bd50">.</span></span><span>MGMP BAHASA INDONESIA<small>KORWIL NGAWI SELATAN</small></span></a>
+  <div><p>Berbagi Ilmu • Bertumbuh Bersama • Menguatkan Literasi</p><p>© <span id="year"></span> MGMP Bahasa Indonesia Korwil Ngawi Selatan. Konten dikelola pengurus MGMP.</p></div>
+ </div>
+</footer>
+<a class="backtop" href="#beranda" aria-label="Kembali ke atas">↑</a>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.textContent = isOpen ? '✕' : '☰';
+});
+navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.textContent = '☰';
+}));
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const searchInput = document.getElementById('resourceSearch');
+const filterInput = document.getElementById('resourceFilter');
+const resourceCards = [...document.querySelectorAll('#resourceGrid .resource-card')];
+const emptyState = document.getElementById('emptyState');
+function filterResources() {
+  const term = searchInput.value.trim().toLowerCase();
+  const category = filterInput.value;
+  let visible = 0;
+  resourceCards.forEach(card => {
+    const haystack = (card.dataset.search + ' ' + card.textContent).toLowerCase();
+    const match = haystack.includes(term) && (category === 'all' || card.dataset.category === category);
+    card.style.display = match ? 'flex' : 'none';
+    if (match) visible++;
+  });
+  emptyState.style.display = visible ? 'none' : 'block';
+}
+searchInput.addEventListener('input', filterResources);
+filterInput.addEventListener('change', filterResources);
+
+document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  // GANTI alamat berikut dengan email resmi MGMP sebelum situs digunakan.
+  const recipient = 'ganti-email-mgmp@example.com';
+  const name = document.getElementById('visitorName').value.trim();
+  const role = document.getElementById('visitorRole').value.trim();
+  const email = document.getElementById('visitorEmail').value.trim();
+  const message = document.getElementById('visitorMessage').value.trim();
+  const subject = encodeURIComponent('Pesan dari website MGMP Bahasa Indonesia Korwil Ngawi Selatan');
+  const body = encodeURIComponent(`Nama: ${name}\nAsal sekolah/instansi: ${role}\nEmail: ${email}\n\nPesan:\n${message}`);
+  if (recipient === 'ganti-email-mgmp@example.com') {
+    document.getElementById('formStatus').textContent = 'Form belum aktif: pengelola perlu mengganti alamat email tujuan pada kode JavaScript.';
+    return;
+  }
+  window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+});
+</script>
+</body>
+</html>
